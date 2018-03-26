@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'category#index'
+  root to: 'categories#index'
 
-  resources :category, only: [:index]
-  resources :recipe, only: [:index, :show]
+  resources :categories, only: [:index]
+  resources :recipes, only: [:index, :show]
 end
