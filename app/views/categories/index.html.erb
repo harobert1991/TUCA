@@ -1,2 +1,12 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<span class="text-center"> <h1>What's on your mood ?</h1> </span>
+
+
+<% @categories.each do |category| %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="card card-category">
+      <%= category.name  %>
+      </div>
+    </div>
+  </div>
+<% end %>
