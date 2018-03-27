@@ -3,23 +3,82 @@
   <h1>Choose a Recipe</h1>
   <div class="row">
     <% @recipes.each do |recipe| %>
-      <% link_to '#' do %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo %>')";>
 
-          <div class="card-body">
-          <div class="card-description">
-            <h2> <%= recipe.name %> </h2>
-            <p><%= recipe.description %> </p>
-          </div>
-          <div class="card-time">
-            <%= (recipe.cooking_time) %>
-          </div>
-        </div>
-
-        </div>
-        </div>
+    <div class="card">
+      <%= link_to '#' do %>
+      <%= image_tag(cl_image_path recipe.photo) %>
       <% end %>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          <%= recipe.name %>
+          <small><%= recipe.description %></small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          This grid is the cooking_time <%= (recipe.cooking_time) %>
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <% end %>
   </div>
 </div>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var zindex = 10;
+
+    $("div.card").click(function(e){
+      e.preventDefault();
+
+      var isShowing = false;
+
+      if ($(this).hasClass("show")) {
+        isShowing = true
+      }
+
+      if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+      .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+        .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+        .css({zIndex: zindex})
+        .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+      .addClass("showing");
+      $(this)
+      .css({zIndex:zindex})
+      .addClass("show");
+
+      zindex++;
+    }
+
+  });
+});</script>
