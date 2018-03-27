@@ -1,8 +1,35 @@
-<ul>
 
-<% @recipes.each do |r| %>
-<li>
- <%= r.name %> - <%= r.category.name %>
-</li>
-<% end %>
-</ul>
+<div class="container">
+  <h1>Choose a Recipe</h1>
+
+
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+    <% link_to do %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+
+      <div class="card">
+
+
+        <div class="card-cover">
+
+        </div>
+
+        <div class=card-body>
+          <div class="card-description">
+            <h2> <%= recipe.name %> </h2>
+            <p><%= recipe.description %> </p>
+          </div>
+          <div class="card-time">
+            <%= (meal.time) %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
