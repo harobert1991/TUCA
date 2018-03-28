@@ -1,43 +1,45 @@
 
 <div class="container">
-  <h1>Choose a Recipe</h1>
+  <h1 class="text-center">Choose a Recipe</h1>
   <div class="row">
-    <% @recipes.each do |recipe| %>
-
-    <div class="card">
-      <%= link_to '#' do %>
-      <%= image_tag(cl_image_path recipe.photo) %>
-      <% end %>
-      <div class="card-title">
-        <a href="#" class="toggle-info btn">
-          <span class="left"></span>
-          <span class="right"></span>
-        </a>
-        <h2>
-          <%= recipe.name %>
-          <small><%= recipe.description %></small>
-        </h2>
-      </div>
-      <div class="card-flap flap1">
-        <div class="card-description">
-          This grid is the cooking_time <%= (recipe.cooking_time) %>
-        </div>
-        <div class="card-flap flap2">
-          <div class="card-actions">
-            <a href="#" class="btn">Read more</a>
+    <div class="col-xs-12 text-center">
+      <% @recipes.each do |recipe| %>
+      <div class="card">
+        <%= link_to recipe_path(recipe) do %>
+        <%= image_tag(cl_image_path recipe.photo) %>
+        <% end %>
+        <div class="card-title">
+            <!-- <a href="#" class="toggle-info btn">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a> -->
+            <h2>
+              <%= recipe.name %>
+              <small><%= recipe.description %></small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              This grid is the cooking_time <%= (recipe.cooking_time) %>
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <%= link_to root_path, class: "btn" do %>
+                Read more
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
-
-    <% end %>
   </div>
-</div>
 
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function(){
     var zindex = 10;
 
@@ -81,4 +83,4 @@
     }
 
   });
-});</script>
+});</script> -->
