@@ -23,7 +23,11 @@
 
       <div class="step-details">
         <% step.tools.each do |tool| %>
+
         <i class="<%= tool.icon %>"></i>
+
+          <%= image_tag(tool.icon) %>
+
         <% end %>
       </div>
 
