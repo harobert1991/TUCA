@@ -1,16 +1,16 @@
-#step {
-  height: 500vh;
-}
-
 .row h3 {
   color: green;
 }
 
-.container * {
-  padding: 5px 4px;
-}
 .ingredient-container {
   margin: 5px 10px 5px 10px;
   display: flex;
   justify-content: space-between;
+}
+
+#step {
+  height: 500vh;
+}
+
+#step-without-margin {
 }

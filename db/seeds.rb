@@ -36,9 +36,17 @@ s6 =Step.create!(sequence: 6, photo: "http://res.cloudinary.com/dqsodpjur/image/
 
 puts 'Creating doses...'
 
-d1 = Dose.create!(ingredient: "potato", quantity: 200, unit:"g", step: s1 )
-d2 = Dose.create!(ingredient: "szechuan sauce", quantity: 1, unit:"liter", step: s1 )
-d3 = Dose.create!(ingredient: "love", quantity: 1000, unit:"hearts", step: s1 )
+d1 = Dose.create!(ingredient: "Potato", quantity: 600, unit:"g", step: s1 )
+d2 = Dose.create!(ingredient: "Red onion", quantity: 1, unit:"pc", step: s2 )
+d3 = Dose.create!(ingredient: "Dried tomatoes", quantity: 60, unit:"g", step: s2 )
+d4 = Dose.create!(ingredient: "Beef meatballs", quantity: 6, unit:"pc", step: s3 )
+d7 = Dose.create!(ingredient: "Butter", quantity: 2, unit:"tea spoons", step: s3 )
+d8 = Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"tea spoons", step: s3 )
+d5 = Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4 )
+d6 = Dose.create!(ingredient: "Cheese cutted in dices", quantity: 50, unit:"g", step: s5 )
+d9 = Dose.create!(ingredient: "Milk", quantity: 0, unit:"to your own taste", step: s5 )
+d10 = Dose.create!(ingredient: "Pepper", quantity: 0, unit:"to your own taste", step: s5 )
+d11 = Dose.create!(ingredient: "Salt", quantity: 0, unit:"to your own taste", step: s5 )
 
 puts 'Creating tools...'
 
@@ -51,4 +59,5 @@ StepTool.create!(step: s1, tool: knife)
 StepTool.create!(step: s1, tool: pot)
 
 puts 'Finished!'
+
 

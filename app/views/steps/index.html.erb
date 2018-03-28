@@ -1,37 +1,46 @@
 
 <%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
-  <i class="fas fa-chevron-left"></i>
+<i class="fas fa-chevron-left"></i>
 <% end %>
 <br>
-<br>
-<br>
-
 <div class="container" id="step">
-  <h1 class="text-center">Let's start with our recipe</h1>
+  <h1 class="text-center"><%= @recipe.name %></h1>
+  <div class="recipe-time">
+    <i class="far fa-clock"></i>
+    <% sum_time = @recipe.prep_time + @recipe.cooking_time %>
+    <%= sum_time %> min
+  </div>
   <div class="row">
     <% @steps.each do |step| %>
+    <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
+    </div>
     <div>
-      <h3> <%= step.sequence %>. <%= step.description %> </h3>
+      <h3 id="step-without-margin"> <%= step.sequence %>. <%= step.description %> </h3>
+      <div class="step-time">
+        <i class="far fa-clock"></i>
+        <%= step.step_time %> min
+      </div>
+
       <div class="step-details">
         <% step.tools.each do |tool| %>
-          <i class="<%= tool.icon %>"></i>
+        <i class="<%= tool.icon %>"></i>
         <% end %>
-        <i class="far fa-clock"></i>
-        <%= step.step_time %> minutes
       </div>
-      <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
+
+      <% @steps.each do |step| %>
+      <div id="ingredient-details">
+        <% step.doses.each do |dose| %>
+        <i class="fas fa-caret-right"></i>
+        <%= dose.ingredient %>
+        <%= dose.quantity %>
+        <%= dose.unit %>
+        <br>
+        <% end %>
+        <% end %>
       </div>
-      <div class="ingredient-container">
-      <% step.doses.each do |dose| %>
+
       <div>
-      <%= dose.ingredient %>
-      <%= dose.quantity %>
-      <%= dose.unit %>
-      </div>
-      <% end %>
-      </div>
-      <div>
-        In order to boil the potatoes, you need to put about 1 liter of water in a pot.
+        <p>In order to boil the potatoes, you need to put about 1 liter of water in a pot.</p>
       </div>
       <% end %>
     </div>
