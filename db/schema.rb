@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20180328123207) do
     t.string "photo"
   end
 
+  create_table "doses", force: :cascade do |t|
+    t.string "ingredient"
+    t.integer "quantity"
+    t.string "unit"
+    t.bigint "step_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_doses_on_step_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -78,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180328123207) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "doses", "steps"
   add_foreign_key "recipes", "categories"
   add_foreign_key "step_tools", "steps"
   add_foreign_key "step_tools", "tools"
