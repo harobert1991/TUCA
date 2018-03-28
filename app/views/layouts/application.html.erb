@@ -12,7 +12,7 @@
   </head>
   <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <% if params[:controller] == "recipes" && params[:action] == "index"%>
+    <% if params[:controller] == "recipes" || params[:controller] == "categories"%>
     <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
