@@ -1,8 +1,8 @@
 
 <div class="banner-recipe" style="background-image: url('<%= cl_image_path (@recipe.photo) %>')">
-    <%= link_to recipes_path(category: @recipe.category.name), class:"arrow"  do %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
+  <%= link_to recipes_path(category: @recipe.category.name), class:"arrow"  do %>
+  <i class="fas fa-chevron-left"></i>
+  <% end %>
   <div class="banner-content">
     <h1><%= @recipe.name %></h1>
   </div>
@@ -17,5 +17,11 @@
   </div>
 </div>
 
+
+<div class="text-center" id="cook-btn" >
+  <%= link_to recipe_steps_path(@recipe), class:"btn btn-primary" do %>
+  Start Cooking!
+  <% end %>
+</div>
 
 

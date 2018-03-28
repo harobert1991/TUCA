@@ -8,7 +8,6 @@
 puts 'Cleaning database...'
 Recipe.destroy_all
 Category.destroy_all
-Step.destroy_all
 
 
 puts 'Creating categories...'
