@@ -1,2 +1,17 @@
-<h1>Index#show</h1>
-<p>Find me in app/views/steps/show.html.erb</p>
+
+
+<div class="container" id="step">
+  <h1>Let's start with our recipe</h1>
+  <div class="row">
+    <% @steps.each do |step| %>
+    <div>
+      <h3> <%= step.sequence %>. <%= step.description %> </h3>
+      <div><i class="far fa-clock"></i> <%= step.step_time %> minutes</div>
+      <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";></div>
+      <div>
+        In order to boil the potatoes, you need to put about 1 liter of water in a pot.
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
