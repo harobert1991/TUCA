@@ -11,12 +11,17 @@
     <link href="https://fonts.googleapis.com/css?family=Enriqueta|Lato" rel="stylesheet">
   </head>
   <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
     <div class="empty">
     </div>
+
   </body>
+
+
 </html>

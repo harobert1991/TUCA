@@ -1,2 +1,21 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+
+<div class="banner-recipe" style="background-image: url('<%= cl_image_path (@recipe.photo) %>')">
+    <%= link_to recipes_path(category: @recipe.category.name), class:"arrow"  do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  <div class="banner-content">
+    <h1><%= @recipe.name %></h1>
+  </div>
+</div>
+<div class="recipe-icons">
+  <div>
+    <i class="far fa-clock"></i>
+    <%= @recipe.cooking_time + @recipe.prep_time %> min
+  </div>
+  <div>
+    <i class="fas fa-cart-plus"></i>
+  </div>
+</div>
+
+
+
