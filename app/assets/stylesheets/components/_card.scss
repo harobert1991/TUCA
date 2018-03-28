@@ -13,7 +13,18 @@
 .card-category {
   font-size: 28px;
   color: white;
-  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: green;
+  background-size: cover !important;
+}
+
+
+.card-step {
+  height: 50vh;
+  font-size: 28px;
+  color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -208,4 +219,5 @@ div.card.show {
   div.flap2 {
     transition: all 0.3s 0.2s ease-out;
   }
+
 }
