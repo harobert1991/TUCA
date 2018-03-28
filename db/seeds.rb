@@ -42,8 +42,8 @@ d3 = Dose.create!(ingredient: "love", quantity: 1000, unit:"hearts", step: s1 )
 
 puts 'Creating tools...'
 
-knife = Tool.create!(name: 'knife', icon: "flaticon-knife")
-pot = Tool.create!(name: 'pot', icon: "flaticon-pot")
+knife = Tool.create!(name: 'knife', icon: 'knife-2.svg')
+pot = Tool.create!(name: 'pot', icon: 'knife-2.svg')
 
 puts 'Creating Steptools...'
 
