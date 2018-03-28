@@ -12,7 +12,10 @@
     <% @steps.each do |step| %>
     <div>
       <h3> <%= step.sequence %>. <%= step.description %> </h3>
-      <div>
+      <div class="step-details">
+        <% step.tools.each do |tool| %>
+          <i class="<%= tool.icon %>"></i>
+        <% end %>
         <i class="far fa-clock"></i>
         <%= step.step_time %> minutes
       </div>
