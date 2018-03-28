@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328120957) do
+ActiveRecord::Schema.define(version: 20180328123207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20180328120957) do
     t.index ["category_id"], name: "index_recipes_on_category_id"
   end
 
+  create_table "step_tools", force: :cascade do |t|
+    t.bigint "step_id"
+    t.bigint "tool_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_step_tools_on_step_id"
+    t.index ["tool_id"], name: "index_step_tools_on_tool_id"
+  end
+
   create_table "steps", force: :cascade do |t|
     t.integer "sequence"
     t.string "photo"
@@ -53,6 +62,13 @@ ActiveRecord::Schema.define(version: 20180328120957) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_steps_on_recipe_id"
+  end
+
+  create_table "tools", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,5 +90,7 @@ ActiveRecord::Schema.define(version: 20180328120957) do
 
   add_foreign_key "doses", "steps"
   add_foreign_key "recipes", "categories"
+  add_foreign_key "step_tools", "steps"
+  add_foreign_key "step_tools", "tools"
   add_foreign_key "steps", "recipes"
 end
