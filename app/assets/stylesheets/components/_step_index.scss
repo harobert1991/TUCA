@@ -9,7 +9,35 @@
 
 .step-details {
   font-size: 20px;
+
+  #step-det {
+    margin-left: 5px;
+  }
+}
+
+.step-time {
+  font-size: 20px;
+}
+
+.recipe-time {
+  font-size: 20px;
+  text-align: center;
+}
+
+#ingredient-details {
+  font-size: 20px;
+  margin-left: 0px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.container #step {
+  padding: 2px 4px;
+  
   img {
     height: 30px;
   }
+
 }
