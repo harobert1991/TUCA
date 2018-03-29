@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get "dashboard", to: "pages#dashboard"
   get "search", to: "recipes#search"
   devise_for :users
   root to: 'categories#index'
