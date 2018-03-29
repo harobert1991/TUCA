@@ -10,6 +10,12 @@
   height: 70vh;
 }
 
+.banner-content {
+  h1 {
+    padding: 10px 20px;
+  }
+}
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -30,7 +36,8 @@
   justify-content: space-around;
   color: gray;
   opacity: 0.8;
-  font-size: 15px;
+  font-size: 25px;
+  padding: 20px 20px;
   // padding-top: 17px;
   // padding-left: 100px;
   // padding-right: 100px;
@@ -41,6 +48,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  h4 {
+    font-weight: 100;
+    font-family: "Lato", "sans serif";
+  }
   // padding-top: 25px;
 }
 
