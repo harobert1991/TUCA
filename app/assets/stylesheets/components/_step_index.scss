@@ -8,23 +8,28 @@
 }
 
 .step-details {
-
   font-size: 16px;
+}
 
-  img {
-  height: 30px;
-  }
+.step-description {
+  p {
+  margin: 0 0 3px !important;
+}
 }
 
 .step-time {
   font-size: 15px;
   font-weight: normal;
+    img {
+  height: 30px;
+  }
 }
 
 .recipe-time {
   font-size: 18px;
   text-align: center;
   font-weight: normal;
+  margin-bottom: 20px;
 }
 
 .text-center {
