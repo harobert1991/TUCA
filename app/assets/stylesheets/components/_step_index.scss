@@ -9,6 +9,9 @@
 
 .step-details {
   font-size: 20px;
+  width: 30px;
+  height: 30px;
+  padding-bottom: 30px;
 
   #step-det {
     margin-left: 5px;
@@ -20,17 +23,24 @@
 }
 
 .step-time {
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: normal;
 }
 
 .recipe-time {
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
+  font-weight: normal;
+}
+
+.text-center {
+  font-weight: lighter;
 }
 
 #ingredient-details {
   font-size: 20px;
   margin-left: 0px;
+  font-weight: lighter;
 }
 
 p {
@@ -39,6 +49,7 @@ p {
 
 .container #step {
   padding: 2px 4px;
+
 }
 
 
