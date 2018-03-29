@@ -14,7 +14,7 @@
     <% @steps.each do |step| %>
     <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
     </div>
-    <div>
+
       <h3 id="step-without-margin"> <%= step.sequence %>. <%= step.description %> </h3>
       <div class="step-time">
         <i class="far fa-clock"></i>
@@ -23,11 +23,7 @@
 
       <div class="step-details">
         <% step.tools.each do |tool| %>
-
-        <i class="<%= tool.icon %>"></i>
-
-          <%= image_tag(tool.icon) %>
-
+        <%= image_tag(tool.icon) %>
         <% end %>
       </div>
 
@@ -35,7 +31,7 @@
       <div id="ingredient-details">
         <% step.doses.each do |dose| %>
         <i class="fas fa-caret-right"></i>
-        <%= dose.ingredient %>
+        <%= dose.ingredient %> -
         <%= dose.quantity %>
         <%= dose.unit %>
         <br>
@@ -47,6 +43,6 @@
         <p>In order to boil the potatoes, you need to put about 1 liter of water in a pot.</p>
       </div>
       <% end %>
-    </div>
+
   </div>
 </div>

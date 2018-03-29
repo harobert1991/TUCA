@@ -22,17 +22,19 @@ vegetarian = Category.create!(name: 'vegetarian', photo: "http://res.cloudinary.
 
 puts 'Creating recipes...'
 
-donburi = Recipe.create!(name: 'Donburi', description: "Fresh donburi made with love", prep_time: 10, cooking_time: 20, category: asian, photo:"http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg" )
+meatballs = Recipe.create!(name: 'Meatballs with chicory puree', description: "Fresh meatballs made with love", prep_time: 12, cooking_time: 35, category: asian, photo:"http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg" )
 veg_lasagna = Recipe.create!(name: 'Vegetarian lasagna', description: "Healthy lasagna made with natural ingredients", prep_time: 15, cooking_time: 30, category: vegetarian, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg")
 
 puts 'Creating steps...'
 
-s1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the potatoes", step_time: 15, recipe: donburi)
-s2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Cut the onions", step_time: 2, recipe: donburi)
-s3 =Step.create!(sequence: 3, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the meatballs", step_time: 15, recipe: donburi)
-s4 =Step.create!(sequence: 4, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Step 4", step_time: 5, recipe: donburi)
-s5 =Step.create!(sequence: 5, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Step 5", step_time: 10, recipe: veg_lasagna)
-s6 =Step.create!(sequence: 6, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Step 6", step_time: 15, recipe: veg_lasagna)
+s1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the potatoes", step_time: 15, recipe: meatballs)
+s2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Cut the onions", step_time: 2, recipe: meatballs)
+s3 =Step.create!(sequence: 3, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the meatballs", step_time: 15, recipe: meatballs)
+s4 =Step.create!(sequence: 4, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Cook the chicory", step_time: 5, recipe: meatballs)
+s5 =Step.create!(sequence: 5, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Make the puree and spice it!", step_time: 5, recipe: meatballs)
+s6 =Step.create!(sequence: 6, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Serve your delicious meal", step_time: 5, recipe: meatballs)
+st1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Step 1", step_time: 10, recipe: veg_lasagna)
+st2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Step 2", step_time: 15, recipe: veg_lasagna)
 
 puts 'Creating doses...'
 
@@ -44,14 +46,14 @@ d7 = Dose.create!(ingredient: "Butter", quantity: 2, unit:"tea spoons", step: s3
 d8 = Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"tea spoons", step: s3 )
 d5 = Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4 )
 d6 = Dose.create!(ingredient: "Cheese cutted in dices", quantity: 50, unit:"g", step: s5 )
-d9 = Dose.create!(ingredient: "Milk", quantity: 0, unit:"to your own taste", step: s5 )
-d10 = Dose.create!(ingredient: "Pepper", quantity: 0, unit:"to your own taste", step: s5 )
-d11 = Dose.create!(ingredient: "Salt", quantity: 0, unit:"to your own taste", step: s5 )
+d9 = Dose.create!(ingredient: "Milk", unit:"to your own taste", step: s5 )
+d10 = Dose.create!(ingredient: "Pepper", unit:"to your own taste", step: s5 )
+d11 = Dose.create!(ingredient: "Salt", unit:"to your own taste", step: s5 )
 
 puts 'Creating tools...'
 
 knife = Tool.create!(name: 'knife', icon: 'knife-2.svg')
-pot = Tool.create!(name: 'pot', icon: 'knife-2.svg')
+pot = Tool.create!(name: 'pot', icon: 'pot.svg')
 
 puts 'Creating Steptools...'
 
