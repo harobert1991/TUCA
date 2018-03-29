@@ -13,3 +13,4 @@ class CategoriesController < ApplicationController
   params.require(:article).permit(:title, :body, :photo)
   end
 end
+
