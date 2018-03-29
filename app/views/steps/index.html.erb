@@ -14,8 +14,9 @@
     <% @steps.each do |step| %>
     <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
     </div>
+    <div class="complete-step-without-picture">
+      <%# use the complete-step-without-picture class for the padding  %>
 
-      <h3 id="step-without-margin"> <%= step.sequence %>. <%= step.description %> </h3>
       <div class="step-time">
         <i class="far fa-clock"></i>
         <%= step.step_time %> min
@@ -25,24 +26,31 @@
         <% step.tools.each do |tool| %>
         <%= image_tag(tool.icon) %>
         <% end %>
+        <div class="doses-details">
+          <% step.doses.each do |dose| %>
+          <div id="ingredient-details">
+            <i class="fas fa-caret-right"></i>
+            <%= dose.ingredient %> -
+            <%= dose.quantity %>
+            <%= dose.unit %>
+          </div>
+          <% end %>
+        </div>
       </div>
 
-      <% @steps.each do |step| %>
-      <div id="ingredient-details">
-        <% step.doses.each do |dose| %>
-        <i class="fas fa-caret-right"></i>
-        <%= dose.ingredient %> -
-        <%= dose.quantity %>
-        <%= dose.unit %>
-        <br>
-        <% end %>
-        <% end %>
-      </div>
+
 
       <div>
-        <p>In order to boil the potatoes, you need to put about 1 liter of water in a pot.</p>
+        <p> <%= step.description %></p>
       </div>
+    </div>
+    <div class="text-center" id="step-btn" >
+      <%= link_to recipe_steps_path(@recipe), class:"btn btn-primary" do %>
+      Next step
       <% end %>
+    </div>
+    <% end %>
+
 
   </div>
 </div>

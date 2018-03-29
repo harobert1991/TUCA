@@ -8,7 +8,7 @@
 }
 
 .step-details {
-  font-size: 20px;
+  font-size: 16px;
 
   #step-det {
     margin-left: 5px;
@@ -29,7 +29,7 @@
 }
 
 #ingredient-details {
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 0px;
 }
 
@@ -41,4 +41,18 @@ p {
   padding: 2px 4px;
 }
 
+.complete-step-without-picture {
+  padding: 2px 4px;
+}
 
+.complete-step-without-picture * {
+  padding: 2px 4px;
+}
+
+
+#step-btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+}

@@ -27,12 +27,12 @@ veg_lasagna = Recipe.create!(name: 'Vegetarian lasagna', description: "Healthy l
 
 puts 'Creating steps...'
 
-s1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the potatoes", step_time: 15, recipe: meatballs)
-s2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Cut the onions", step_time: 2, recipe: meatballs)
-s3 =Step.create!(sequence: 3, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Cook the meatballs", step_time: 15, recipe: meatballs)
-s4 =Step.create!(sequence: 4, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Cook the chicory", step_time: 5, recipe: meatballs)
-s5 =Step.create!(sequence: 5, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Make the puree and spice it!", step_time: 5, recipe: meatballs)
-s6 =Step.create!(sequence: 6, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Serve your delicious meal", step_time: 5, recipe: meatballs)
+s1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Portez une grande quantité d'eau à ébullition dans la casserole. Lavez ou épluchez les pommes de terre, découpez-les en gros morceaux et faites-les cuire 15 minutes à couvert. Egouttez en conservant un peu d'eau de cuisson et réservez sans couvercle.", step_time: 15, recipe: meatballs)
+s2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Pendant ce temps, taillez l'oignon rouge en demi-rondeleles et détaillez les tomates séchées.", step_time: 2, recipe: meatballs)
+s3 =Step.create!(sequence: 3, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Faites chauffer la moitié du beurre dans la poêle et faites-y dorer les boulettes sur tous les côtés 3 à 4 minutes à feu moyen-vif. Ajoutez l'oignon rouge et le vinaigre balsamique noir, puis remuez 1 minute. Baissez le feu, couvrez la poêle et poursuivez la cuisson 10 minutes ou jusqu'à ce que les boulettes soient cuites.", step_time: 15, recipe: meatballs)
+s4 =Step.create!(sequence: 4, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Pendant ce temps, faites chauffer le reste du beurre dans le wok ou la sauteuse et faites-y cuire la majeure partie de la chicorée 5 minutes à feu moyen.", step_time: 5, recipe: meatballs)
+s5 =Step.create!(sequence: 5, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Ecrasez les pommes de terre au presse-purée pour en faire une purée épaisse. Pour plus d'onctuosité, ajoutez éventuellement un filet de lait ou d'eau de cuisson. Incorporez la chicorée cuite et crue à la purée, puis ajoutez le fromage et les tomates séchées. Salez et poivrez.", step_time: 5, recipe: meatballs)
+s6 =Step.create!(sequence: 6, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Servez la purée de chicorée sur les assiettes et garnissez avec l'oignon rouge. Accompagnez des boulettes et arrosez-les du jus de viande de la poêle.", step_time: 5, recipe: meatballs)
 st1 =Step.create!(sequence: 1, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg", description: "Step 1", step_time: 10, recipe: veg_lasagna)
 st2 =Step.create!(sequence: 2, photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg", description: "Step 2", step_time: 15, recipe: veg_lasagna)
 
@@ -54,12 +54,23 @@ puts 'Creating tools...'
 
 knife = Tool.create!(name: 'knife', icon: 'knife-2.svg')
 pot = Tool.create!(name: 'pot', icon: 'pot.svg')
+pot1 = Tool.create!(name: 'pot-1', icon: 'pot-1.svg')
+pan = Tool.create!(name: 'pan', icon: 'pan.svg')
+dish = Tool.create!(name: 'dish', icon: 'dish.svg')
+cutlery = Tool.create!(name: 'cutlery', icon: 'cutlery.svg')
+tenderizer = Tool.create!(name: 'tenderizer', icon: 'tenderizer.svg')
 
 puts 'Creating Steptools...'
 
 StepTool.create!(step: s1, tool: knife)
 StepTool.create!(step: s1, tool: pot)
-
+StepTool.create!(step: s2, tool: knife)
+StepTool.create!(step: s3, tool: pan)
+StepTool.create!(step: s4, tool: pan)
+StepTool.create!(step: s5, tool: pot1)
+StepTool.create!(step: s5, tool: tenderizer)
+StepTool.create!(step: s6, tool: dish)
+StepTool.create!(step: s6, tool: cutlery)
 puts 'Finished!'
 
 
