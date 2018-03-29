@@ -13,7 +13,9 @@
     <%= @recipe.cooking_time + @recipe.prep_time %> min
   </div>
   <div>
+  <%= link_to recipe_carts_path(@recipe), method: :post do %>
     <i class="fas fa-cart-plus"></i>
+  <% end %>
   </div>
 </div>
 

@@ -20,4 +20,12 @@ class RecipesController < ApplicationController
       @recipes = Recipe.all
     end
   end
+
+  def recipe_ingredients
+    ingredient_array = []
+    self.dose.each do |d|
+      ingredient_array << d.ingredient
+    end
+    unique_ingredients = ingredient_array.uniq
+  end
 end
