@@ -1,0 +1,12 @@
+
+
+<% @carts.each do |c| %>
+  <ul>
+    <% c.recipe.doses.each do |dose| %>
+      <li>
+        <%= dose.ingredient %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+

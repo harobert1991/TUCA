@@ -5,7 +5,9 @@
   <%= link_to root_path, class:"active" do %>
   <i class="fas fa-home"></i>
   <% end %>
-  <a href="#"><i class="fas fa-shopping-cart"></i></a>
+  <%= link_to carts_path do %>
+  <i class="fas fa-shopping-cart"></i>
+  <% end %>
   <%=  link_to search_path do %>
   <i class="fas fa-search"></i>
   <% end %>

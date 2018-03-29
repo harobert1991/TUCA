@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :recipes, only: [:index, :show] do
     resources :steps, only: [:index]
+    resources :carts, only: [:create, :new]
   end
+  resources :carts, only: [:index]
 end
 
