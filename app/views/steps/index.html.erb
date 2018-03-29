@@ -12,6 +12,7 @@
   </div>
   <div class="row">
     <% @steps.each do |step| %>
+    <div class="wrappe-step" style="height: 100vh;" id='step-<%= step.id %>'>
     <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
     </div>
     <div class="complete-step-without-picture">
@@ -20,12 +21,13 @@
       <div class="step-time">
         <i class="far fa-clock"></i>
         <%= step.step_time %> min
-      </div>
-
-      <div class="step-details">
         <% step.tools.each do |tool| %>
         <%= image_tag(tool.icon) %>
         <% end %>
+      </div>
+
+      <div class="step-details">
+
         <div class="doses-details">
           <% step.doses.each do |dose| %>
           <div id="ingredient-details">
@@ -40,14 +42,14 @@
 
 
 
-      <div>
+      <div class="step-description">
         <p> <%= step.description %></p>
       </div>
     </div>
     <div class="text-center" id="step-btn" >
-      <%= link_to recipe_steps_path(@recipe), class:"btn btn-primary" do %>
-      Next step
-      <% end %>
+      <a href="#step-<%= (step.id + 1) %>" class="btn btn-primary" >
+      Next step </a>
+    </div>
     </div>
     <% end %>
 
