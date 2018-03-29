@@ -1,9 +1,10 @@
 
 
 <% @carts.each do |c| %>
-  <ul>
+  <ul class="cart-list">
     <% c.recipe.doses.each do |dose| %>
       <li>
+        <%= check_box_tag(dose.ingredient) %>
         <%= dose.ingredient %>
       </li>
     <% end %>
