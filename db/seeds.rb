@@ -19,13 +19,13 @@ Step.destroy_all
 
 puts 'Creating categories...'
 
-asian = Category.create!(name: 'asian', photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg")
-vegetarian = Category.create!(name: 'vegetarian', photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg")
+traditional = Category.create!(name: 'Traditional', photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_360/v1/hellofresh_s3/image/ovenkrieltjes-met-kip-en-groene-pesto-cb0ea6e6.jpg")
+vegetarian = Category.create!(name: 'Vegetarian', photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg")
 
 puts 'Creating recipes...'
 
 
-meatballs = Recipe.create!(name: 'Meatballs with chicory puree', description: "Fresh meatballs made with love", prep_time: 12, cooking_time: 35, category: asian, photo:"http://res.cloudinary.com/dqsodpjur/image/upload/v1522147213/po2tdf0b727h1swcpas3.jpg" )
+meatballs = Recipe.create!(name: 'Meatballs with chicory puree', description: "Fresh meatballs made with love", prep_time: 12, cooking_time: 35, category: traditional, photo:"https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_80,w_auto:100:1280/v1/hellofresh_s3/image/andijviestamppot-met-gehaktballetjes-1374b75b.jpg" )
 penne_bolo = Recipe.create!(name: 'Penne, bolognaise aux lentilles', description: "Avec de la roquette et graines de courges", prep_time: 15, cooking_time: 10, category: vegetarian, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_80,w_auto:100:1280/v1/hellofresh_s3/image/598c1e4aa2882a7f736776c5-fb27751c.jpg")
 
 puts 'Creating steps...'
@@ -46,19 +46,32 @@ st6 = Step.create!(sequence: 6, photo: "https://res.cloudinary.com/hellofresh/im
 
 puts 'Creating doses...'
 
-d1 = Dose.create!(ingredient: "Oignon", quantity: 1, unit:"pc", step: st1 )
-d2 = Dose.create!(ingredient: "Tomates cerises", quantity: 250, unit:"g", step: st1 )
-d3 = Dose.create!(ingredient: "Graines de potiron", quantity: 20, unit:"g", step: st2 )
-d4 = Dose.create!(ingredient: "Penne complètes", quantity: 180, unit:"g", step: st4 )
-d7 = Dose.create!(ingredient: "Gousse d’ail", quantity: 2, unit:"pc", step: st1 )
-d8 = Dose.create!(ingredient: "Pois chiches", quantity: 250, unit:"g.", step: st1 )
-d5 = Dose.create!(ingredient: "Roquette", quantity: 40, unit:"g", step: st5 )
-d6 = Dose.create!(ingredient: "Feta", quantity: 100, unit:"g", step: st6 )
-d9 = Dose.create!(ingredient: "Huile d'olive", quantity: 1, unit:"cs", step: st3 )
-d10 = Dose.create!(ingredient: "Sucre Brun", quantity: 1, unit:"cs", step: st3 )
-d11 = Dose.create!(ingredient: "Vinaigre balsamique", quantity: 1, unit:"cs", step: st3 )
-d12 = Dose.create!(ingredient: "Salt & Pepper", unit:"selon votre goût", step: st5 )
-d13 = Dose.create!(ingredient: "Concentré de tomates", quantity: 1, unit:"boîte", step: st5 )
+Dose.create!(ingredient: "Potato", quantity: 600, unit:"g", step: s1 )
+Dose.create!(ingredient: "Red onion", quantity: 1, unit:"pc", step: s2 )
+Dose.create!(ingredient: "Dried tomatoes", quantity: 60, unit:"g", step: s2 )
+Dose.create!(ingredient: "Beef meatballs", quantity: 6, unit:"pc", step: s3 )
+Dose.create!(ingredient: "Butter", quantity: 2, unit:"t.s.", step: s3 )
+Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"t.s.", step: s3 )
+Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4 )
+Dose.create!(ingredient: "Cheese", quantity: 50, unit:"g", step: s5 )
+Dose.create!(ingredient: "Milk", unit:"t.y.o.t", step: s5 )
+Dose.create!(ingredient: "Pepper", unit:"t.y.o.t", step: s5 )
+Dose.create!(ingredient: "Salt", unit:"t.y.o.t", step: s5 )
+
+
+Dose.create!(ingredient: "Oignon", quantity: 1, unit:"pc", step: st1 )
+Dose.create!(ingredient: "Tomates cerises", quantity: 250, unit:"g", step: st1 )
+Dose.create!(ingredient: "Graines de potiron", quantity: 20, unit:"g", step: st2 )
+Dose.create!(ingredient: "Penne complètes", quantity: 180, unit:"g", step: st4 )
+Dose.create!(ingredient: "Gousse d’ail", quantity: 2, unit:"pc", step: st1 )
+Dose.create!(ingredient: "Pois chiches", quantity: 250, unit:"g.", step: st1 )
+Dose.create!(ingredient: "Roquette", quantity: 40, unit:"g", step: st5 )
+Dose.create!(ingredient: "Feta", quantity: 100, unit:"g", step: st6 )
+Dose.create!(ingredient: "Huile d'olive", quantity: 1, unit:"cs", step: st3 )
+Dose.create!(ingredient: "Sucre Brun", quantity: 1, unit:"cs", step: st3 )
+Dose.create!(ingredient: "Vinaigre balsamique", quantity: 1, unit:"cs", step: st3 )
+Dose.create!(ingredient: "Salt & Pepper", unit:"selon votre goût", step: st5 )
+Dose.create!(ingredient: "Concentré de tomates", quantity: 1, unit:"boîte", step: st5 )
 
 puts 'Creating tools...'
 
