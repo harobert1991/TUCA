@@ -46,10 +46,17 @@
         <p> <%= step.description %></p>
       </div>
     </div>
+    <% if step.id < @steps.count %>
     <div class="text-center" id="step-btn" >
       <a href="#step-<%= (step.id + 1) %>" class="btn btn-primary" >
       Next step </a>
     </div>
+    <% else  %>
+    <div class="text-center" id="step-btn" >
+      <a href="#" class="btn btn-primary" >
+      One step closer to being a great chef! <br><i class="fas fa-check"></i> </a>
+    </div>
+    <% end %>
     </div>
     <% end %>
 

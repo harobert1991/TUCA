@@ -1,13 +1,24 @@
 
-
+<h1 class="text-center">My Cart</h1>
+<br>
 <% @carts.each do |c| %>
-  <ul>
-    <% c.user_ingredient.each do |user_ingredient| %>
+
+  <ul class="cart-list">
+    <% c.recipe.doses.each do |dose| %>
       <li>
-        <%= user_ingredient.dose.ingredient %>
+        <%= check_box_tag(dose.ingredient) %>
+        <%= dose.ingredient %>
       </li>
     <% end %>
   </ul>
 <% end %>
 
-
+<!-- <% @carts.each do |c| %>
+         <ul>
+    <% c.user_ingredient.each do |user_ingredient| %>
+      <li>
+        <%= user_ingredient.dose.ingredient %>
+        </li>
+    <% end %>
+  </ul>
+<% end %> -->
