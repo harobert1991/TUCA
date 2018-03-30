@@ -2,11 +2,12 @@
 
 <% @carts.each do |c| %>
   <ul>
-    <% c.recipe.doses.each do |dose| %>
+    <% c.user_ingredient.each do |user_ingredient| %>
       <li>
-        <%= dose.ingredient %>
+        <%= user_ingredient.dose.ingredient %>
       </li>
     <% end %>
   </ul>
 <% end %>
+
 
