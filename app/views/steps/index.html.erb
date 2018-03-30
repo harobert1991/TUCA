@@ -46,7 +46,7 @@
         <p> <%= step.description %></p>
       </div>
     </div>
-    <% if step.id < @steps.count %>
+    <% if step.sequence < @steps.count %>
     <div class="text-center" id="step-btn" >
       <a href="#step-<%= (step.id + 1) %>" class="btn btn-primary" >
       Next step </a>
