@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :steps, only: [:index]
     resources :carts, only: [:create, :new]
   end
-
+  resources :user_ingredients, only: [] do
+    get "found", to: "user_ingredients#found"
+  end
   resources :carts, only: [:index, :destroy]
 
 end

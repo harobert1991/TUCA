@@ -7,18 +7,28 @@
 <% @carts.each do |cart| %>
   <ul class="cart-list">
       <% cart.user_ingredients.each do |user_ingredient| %>
-        <li>
+      <% if !user_ingredient.Found %>
+        <li id="bought-ui-<%= user_ingredient.id%>">
           <%= check_box_tag(user_ingredient.dose.ingredient) %>
           <%= user_ingredient.dose.ingredient %>
-          <%= link_to "Delete", dose_path, method: :delete %>
+          <%= link_to "Found", user_ingredient_found_path(user_ingredient), remote: :true %>
           </li>
+          <% end %>
       <% end %>
     </ul>
 <% end %>
 
 
-<!-- <script type="text/javascript">
 
-element.addEventListener("click", myScript);
-
-</script> -->
+<% @carts.each do |cart| %>
+  <ul id="found-ingredients">
+      <% cart.user_ingredients.each do |user_ingredient| %>
+      <% if user_ingredient.Found %>
+        <li id="bought-ui-<%= user_ingredient.id%>">
+          <%= check_box_tag(user_ingredient.dose.ingredient) %>
+          <%= user_ingredient.dose.ingredient %>
+          </li>
+          <% end %>
+      <% end %>
+    </ul>
+<% end %>

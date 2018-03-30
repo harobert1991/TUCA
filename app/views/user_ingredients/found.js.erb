@@ -1,0 +1,14 @@
+
+
+function found(){
+let doc = document.getElementById('bought-ui-'+ <%= @uI.id%>);
+doc.remove();
+
+
+  let addthis =     `<li id="bought-ui-<%= @uI.id%>">
+          <%= check_box_tag(@uI.dose.ingredient) %>
+          <%= @uI.dose.ingredient %>
+          </li>`;
+          document.getElementById('found-ingredients').insertAdjacentHTML('beforeend', addthis);
+}
+found();
