@@ -1,24 +1,24 @@
-
 <h1 class="text-center">My Cart</h1>
 <br>
-<% @carts.each do |c| %>
 
+
+
+
+<% @carts.each do |cart| %>
   <ul class="cart-list">
-    <% c.recipe.doses.each do |dose| %>
-      <li>
-        <%= check_box_tag(dose.ingredient) %>
-        <%= dose.ingredient %>
-      </li>
-    <% end %>
-  </ul>
+      <% cart.user_ingredients.each do |user_ingredient| %>
+        <li>
+          <%= check_box_tag(user_ingredient.dose.ingredient) %>
+          <%= user_ingredient.dose.ingredient %>
+          <%= link_to "Delete", dose_path, method: :delete %>
+          </li>
+      <% end %>
+    </ul>
 <% end %>
 
-<!-- <% @carts.each do |c| %>
-         <ul>
-    <% c.user_ingredient.each do |user_ingredient| %>
-      <li>
-        <%= user_ingredient.dose.ingredient %>
-        </li>
-    <% end %>
-  </ul>
-<% end %> -->
+
+<!-- <script type="text/javascript">
+
+element.addEventListener("click", myScript);
+
+</script> -->

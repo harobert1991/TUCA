@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :steps, only: [:index]
     resources :carts, only: [:create, :new]
   end
-  resources :carts, only: [:index]
+
+  resources :carts, only: [:index, :destroy]
+
 end
 
