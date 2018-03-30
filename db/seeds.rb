@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
+Cart.destroy_all
 StepTool.destroy_all
 Recipe.destroy_all
 Category.destroy_all
