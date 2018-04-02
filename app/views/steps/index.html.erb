@@ -1,111 +1,95 @@
 
-
-
 <%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
 <i class="fas fa-chevron-left"></i>
 <% end %>
 <br>
 <br>
 <br>
-<div class="container" id="step">
+<div class="step-container" id="step">
   <h1 class="text-center"><%= @recipe.name %></h1>
   <div class="recipe-time">
     <i class="far fa-clock"></i>
     <% sum_time = @recipe.prep_time + @recipe.cooking_time %>
     <%= sum_time %> min
   </div>
-  <div class="row">
-    <% @steps.each do |step| %>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <% @steps.each do |step| %>
 
- <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="exampleModalLabelb">
-        <p> </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+        </div>
+        <div class="modal-body" id="exampleModalLabelb">
+          <p> </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
-    <div class="wrappe-step" style="height: 100vh;" id='step-<%= step.id %>'>
+  <div class="wrappe-step" style="height: 100vh;" id='step-<%= step.id %>'>
     <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path step.photo %>')";>
     </div>
-    <div class="complete-step-without-picture">
-      <%# use the complete-step-without-picture class for the padding  %>
-
+    <div class="complete-step-without-picture"> <%#complete-step-without-picture classforpadding  %>
       <div class="step-time">
+        <div id="time">
         <i class="far fa-clock"></i>
         <%= step.step_time %> min
+        </div>
+        <div id="tools">
         <% step.tools.each do |tool| %>
         <%= image_tag(tool.icon) %>
         <% end %>
+        </div>
       </div>
-
-      <div class="step-details">
-
-        <div class="doses-details">
+      <div class="row step-details">
           <% step.doses.each do |dose| %>
-          <div id="ingredient-details">
+          <div class="col-xs-6 col-6" id="ingredient-details">
             <i class="fas fa-caret-right"></i>
             <%= dose.ingredient %> -
             <%= dose.quantity %>
             <%= dose.unit %>
           </div>
           <% end %>
-        </div>
       </div>
-
-
-
       <div class="step-description">
         <p> <%= step.description %></p>
       </div>
-    </div>
-    <% if step.sequence < @steps.count %>
-    <div class="text-center step-button" id="countdown" data-countdown="<%= step.step_time %>"  data-sequence="<%= step.sequence %>" data-description="<%= step.description %>" >
+      <% if step.sequence < @steps.count %>
+     <div class="text-center step-button" id="countdown" data-countdown="<%= step.step_time %>"  data-sequence="<%= step.sequence %>" data-description="<%= step.description %>" >
       <a href="#step-<%= (step.id + 1) %>" class="btn btn-primary" >
       Next step </a>
     </div>
     <% else  %>
-    <div class="text-center" id="step-btn" >
+    <div class="text-center step-button" id="step-btn" >
       <a href="#" class="btn btn-primary" >
-      One step closer to being a great chef! <br><i class="fas fa-check"></i> </a>
+      Badass chef incoming <i class="fas fa-check"></i> </a>
     </div>
     <% end %>
     </div>
-    <% end %>
-
-
   </div>
+  <% end %>
 </div>
-
 
 
 <script>
 
-$('.step-button').click(function(event){
+  $('.step-button').click(function(event){
         // e.preventDefault();
-  console.log(event);
-  let a = event.currentTarget.dataset.countdown * 100 ;
-  document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
-  document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
-  console.log(a);
-  setTimeout( function(){
-    $("#myModal").modal("show");
-    }, a);
-});
+        console.log(event);
+        let a = event.currentTarget.dataset.countdown * 100 ;
+        document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
+        document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
+        console.log(a);
+        setTimeout( function(){
+          $("#myModal").modal("show");
+        }, a);
+      });
 
-</script>
+    </script>
 
-<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
