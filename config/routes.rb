@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'categories#index'
 
+  resources :favorites, only: [:destroy]
   resources :categories, only: [:index]
   resources :recipes, only: [:index, :show] do
+    resources :favorites, only: [:new, :create]
     resources :steps, only: [:index]
     resources :carts, only: [:create, :new]
   end

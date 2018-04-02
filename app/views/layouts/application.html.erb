@@ -16,7 +16,7 @@
   </head>
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <% if params[:controller] == "recipes" || params[:controller] == "categories" ||  params[:controller] == "carts"%>
+    <% if params[:controller] == "recipes" || params[:controller] == "categories" ||  params[:controller] == "carts" || params[:controller] == "pages"%>
     <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>

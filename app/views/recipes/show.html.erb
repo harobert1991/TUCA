@@ -14,6 +14,11 @@
     <%= @recipe.cooking_time + @recipe.prep_time %> min
   </div>
   <div>
+    <%= link_to recipe_favorites_path(@recipe), method: :post do %>
+    <i class="far fa-heart"></i>
+    <% end %>
+  </div>
+  <div>
     <%= link_to recipe_carts_path(@recipe), method: :post do %>
     <i class="fas fa-cart-plus"></i>
     <% end %>
@@ -25,9 +30,9 @@
   <% unique_array = [] %>
   <% @recipe.steps.each do |step| %>
     <% step.step_tools.each do |steptool| %>
-      <% unique_array << steptool.tool.name  %>
+      <% unique_array << steptool.tool.icon  %>
     <% end %>
-    <% end %>
+  <% end %>
       <% unique_array.uniq.each do |tn| %>
         <%= image_tag(tn) %>
   <% end %>
