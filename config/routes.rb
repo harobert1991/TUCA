@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
   get "search", to: "recipes#search"
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'categories#index'
 
   resources :favorites, only: [:destroy]
