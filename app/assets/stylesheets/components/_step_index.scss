@@ -38,7 +38,6 @@
 
 #ingredient-details {
   font-size: 16px;
-  margin-left: 0px;
   font-weight: lighter;
 }
 
@@ -46,19 +45,69 @@ p {
   font-size: 16px;
 }
 
-.container #step {
-  padding: 2px 4px;
+// .container #step {
+//   padding: 2px 4px;
 
+// }
+
+
+.wrappe-step {
+  display: flex;
+  flex-direction: column;
 }
 
 .complete-step-without-picture {
-  padding: 2px 4px;
+  flex: 0 0 55%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.complete-step-without-picture * {
-  padding: 2px 4px;
+.step-time{
+  flex: 0 0 14%;
+  padding-left: 10px;
+  padding-top: 10px;
+  position: relative;
+  #time {
+    position: absolute;
+    left: 20px;
+  }
+  #tools {
+    position:absolute;
+    right: 20px;
+  }
 }
 
+.step-details{
+  flex: 0 0 16%;
+  padding: 2px 6px;
+
+}
+
+.step-button{
+    flex: 0 0 20%;
+    padding-top: 5px;
+}
+
+.btn.btn-primary {
+  font-size: 24px;
+}
+  .step-description{
+    flex: 0 0 50%;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+  }
+
+
+// .complete-step-without-picture * {
+//   padding: 2px 4px;
+// }
+
+ .step-button * {
+      padding-top: 5px;
+    }
 
 #step-btn {
   display: flex;
