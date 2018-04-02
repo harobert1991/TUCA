@@ -30,9 +30,9 @@
   <% unique_array = [] %>
   <% @recipe.steps.each do |step| %>
     <% step.step_tools.each do |steptool| %>
-      <% unique_array << steptool.tool.name  %>
+      <% unique_array << steptool.tool.icon  %>
     <% end %>
-    <% end %>
+  <% end %>
       <% unique_array.uniq.each do |tn| %>
         <%= image_tag(tn) %>
   <% end %>
