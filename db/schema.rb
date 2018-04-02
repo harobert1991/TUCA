@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329140926) do
+ActiveRecord::Schema.define(version: 20180402073442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20180329140926) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["step_id"], name: "index_doses_on_step_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_favorites_on_recipe_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -110,6 +119,8 @@ ActiveRecord::Schema.define(version: 20180329140926) do
   add_foreign_key "carts", "recipes"
   add_foreign_key "carts", "users"
   add_foreign_key "doses", "steps"
+  add_foreign_key "favorites", "recipes"
+  add_foreign_key "favorites", "users"
   add_foreign_key "recipes", "categories"
   add_foreign_key "step_tools", "steps"
   add_foreign_key "step_tools", "tools"

@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = User.find(current_user)
+    @user = current_user
+    @favorites = Favorite.where(user: current_user)
   end
 end

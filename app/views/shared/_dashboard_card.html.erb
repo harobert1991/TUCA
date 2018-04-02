@@ -1,0 +1,25 @@
+
+<div class="card">
+  <%= link_to recipe_path(recipe) do %>
+  <%= image_tag(cl_image_path recipe.photo) %>
+  <% end %>
+  <div class="card-title">
+    <h2><%= recipe.name %>
+      <%= link_to favorite_path(favorite), method: :delete do %>
+      <i class="far fa-thumbs-down"></i>
+      <% end %>
+      <small><%= recipe.description %></small></h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        This grid is the cooking_time <%= (recipe.cooking_time) %>
+      </div>
+      <div class="card-flap flap2">
+        <div class="card-actions">
+          <%= link_to root_path, class: "btn" do %>
+          Read more
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
