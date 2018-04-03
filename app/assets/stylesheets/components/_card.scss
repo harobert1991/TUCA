@@ -131,7 +131,7 @@ a.btn:active {
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.05em;
       margin: 0;
@@ -139,10 +139,16 @@ a.btn:active {
 
       small {
         display: block;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 600;
         letter-spacing: -0.025em;
+        line-height: 1.2;
       }
+    }
+    #thumbs-down{
+      position: absolute;
+      top: 5px;
+      right: 5px;
     }
   }
 

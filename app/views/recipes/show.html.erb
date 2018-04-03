@@ -8,6 +8,7 @@
   </div>
 </div>
 
+<div id="recipe-content">
 <div class="recipe-icons">
   <div>
     <i class="far fa-clock"></i>
@@ -39,7 +40,7 @@
 </div>
 
 
-<div class="row floating-box">
+<div class="row ">
   <%#= Recipe.first.doses.first.ingredient %>
   <%#= Recipe.first.doses.first.quantity %>
   <%#= Recipe.first.doses.first.unit %>
@@ -53,12 +54,10 @@
   <% end %>
 </div>
 
-<br>
-<div class="text-center cook-btn-bottom" id="cook-btn" >
-  <%= link_to recipe_steps_path(@recipe), class:"btn btn-primary" do %>
-  Start Cooking!
-  <% end %>
+  <div class="text-center cook-btn-bottom" id="cook-btn" >
+    <%= link_to recipe_steps_path(@recipe), class:"btn btn-primary" do %>
+    Start Cooking!
+    <% end %>
+  </div>
 </div>
-
-
 
