@@ -1,3 +1,4 @@
+<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
 
 <%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
 <i class="fas fa-chevron-left"></i>
@@ -80,16 +81,15 @@
 
   $('.step-button').click(function(event){
         // e.preventDefault();
-        console.log(event);
-        let a = event.currentTarget.dataset.countdown * 100 ;
-        document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
-        document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
-        console.log(a);
-        setTimeout( function(){
-          $("#myModal").modal("show");
-        }, a);
-      });
+  console.log(event);
+  let a = event.currentTarget.dataset.countdown * 100 ;
+  document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
+  document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
+  console.log(a);
+  setTimeout( function(){
+    $("#myModal").modal("show");
+    }, a);
+});
 
-    </script>
+</script>
 
-    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>

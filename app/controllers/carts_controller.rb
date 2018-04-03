@@ -16,9 +16,14 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    raise
-    @cart = Cart.find(params[:id])
-    @user_ingredient = @cart.user_ingredients
+
+  end
+
+  def destroy_all
+    @carts = Cart.where(user: current_user)
+    @carts.destroy_all
+
     redirect_to carts_path
   end
+
 end
