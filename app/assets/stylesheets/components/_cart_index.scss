@@ -1,3 +1,98 @@
-.cart-list {
+#cart-list {
   list-style-type: none;
+}
+
+#found-ingredients {
+  list-style-type: none;
+}
+
+#dose-quantity{
+
+}
+
+#dose-ingredient{
+  color: #00543E;
+  font-weight: bold;
+}
+
+#found-dose-ingredient{
+  color: $light-gray;
+  font-weight: bold;
+}
+
+#found-mini-cook-btn {
+  margin: 3px;
+  height: 90%;
+  border: 1px solid $light-gray;
+  text-align: center;
+
+  background-color: $light-gray;
+  border-radius: 3px;
+  z-index: -1;
+  opacity: 0.8;
+  a {
+
+    color: white;
+  }
+}
+
+#found-mini-cook-btn :hover{
+  opacity: 1;
+}
+#mini-cook-btn {
+  margin: 3px;
+  height: 90%;
+  border: 1px solid $green;
+  text-align: center;
+
+  background-color: $green;
+  border-radius: 3px;
+  z-index: -1;
+  opacity: 0.8;
+  a {
+
+    color: white;
+  }
+}
+
+#mini-cook-btn :hover{
+  opacity: 1;
+}
+
+.tobuy-container {
+  min-height: 30vh;
+  border: 8px solid $green;
+  border-radius: 5px;
+  margin: 8px 40px;
+  padding: 0px !important;
+
+}
+
+.missing-ingr {
+  height: 5vh;
+  background-color: $green;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+
+}
+
+
+.bought-container {
+  min-height: 30vh;
+  border: 8px solid $light-gray;
+  border-radius: 5px;
+  margin: 8px 40px;
+  padding: 0px !important;
+}
+
+
+.found-ingr {
+  height: 5vh;
+  background-color: $light-gray;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
 }

@@ -3,35 +3,54 @@
 
 
 
+<div class="container tobuy-container">
+  <div class="missing-ingr"> Missing ingredients</div>
+  <div id="cart-list">
+    <% @carts.each do |cart| %>
+    <% cart.user_ingredients.each do |user_ingredient| %>
+    <% if !user_ingredient.Found %>
+    <div class="row" id="bought-ui-<%= user_ingredient.id%>">
+      <div class="col-xs-5 col-xs-offset-1" id="dose-ingredient">
+        <%= user_ingredient.dose.ingredient %>
+      </div>
+      <div class="col-xs-2" id="dose-quantity">
+        <%= user_ingredient.dose.quantity %><%= user_ingredient.dose.unit %>
+      </div>
+      <div class="col-xs-4" >
+        <div id="mini-cook-btn">
+         <%= link_to "Found", user_ingredient_found_path(user_ingredient), remote: :true %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
 
-<% @carts.each do |cart| %>
-  <ul class="cart-list">
-      <% cart.user_ingredients.each do |user_ingredient| %>
-      <% if !user_ingredient.Found %>
-        <li id="bought-ui-<%= user_ingredient.id%>">
-          <%= check_box_tag(user_ingredient.dose.ingredient) %>
-          <%= user_ingredient.dose.ingredient %>
-          <%= link_to "Found", user_ingredient_found_path(user_ingredient), remote: :true %>
-          </li>
-          <% end %>
-      <% end %>
-    </ul>
-<% end %>
 
+<div class="container bought-container">
+  <div class="found-ingr"> Found Ingredients </div>
+  <div id="found-cart-list">
+  <% @carts.each do |cart| %>
+    <% cart.user_ingredients.each do |user_ingredient| %>
+    <% if user_ingredient.Found %>
+    <div class="row" id="bought-ui-<%= user_ingredient.id%>">
+      <div class="col-xs-5 col-xs-offset-1" id="found-dose-ingredient">
+      <%= user_ingredient.dose.ingredient %>
+    </div>
+    <div class="col-xs-2" id="dose-quantity">
+      <%= user_ingredient.dose.quantity %><%= user_ingredient.dose.unit %>
+    </div>
+    <div class="col-xs-4" >
+        <div id="found-mini-cook-btn">
+         <%= link_to "Lost", user_ingredient_found_path(user_ingredient), remote: :true %>
+        </div>
+     </div>
+  </div>
+  <% end %>
+  <% end %>
 
-
-<% @carts.each do |cart| %>
-  <ul id="found-ingredients">
-      <% cart.user_ingredients.each do |user_ingredient| %>
-      <% if user_ingredient.Found %>
-        <li id="bought-ui-<%= user_ingredient.id%>">
-          <%= check_box_tag(user_ingredient.dose.ingredient) %>
-          <%= user_ingredient.dose.ingredient %>
-          </li>
-          <% end %>
-      <% end %>
-    </ul>
-<% end %>
 
 <div class="text-center">
   <%= link_to destroy_all_carts_path, method: :delete, class: "btn btn-primary" do  %>
