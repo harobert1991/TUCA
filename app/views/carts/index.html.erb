@@ -1,4 +1,4 @@
-<h1 class="text-center">My Cart</h1>
+<h1 class="text-center">My Shopping List</h1>
 <br>
 
 
@@ -32,3 +32,10 @@
       <% end %>
     </ul>
 <% end %>
+
+<div class="text-center">
+  <%= link_to destroy_all_carts_path, method: :delete, class: "btn btn-primary" do  %>
+  <i class="fas fa-trash"></i>
+  Clear my shopping list
+  <% end %>
+</div>
