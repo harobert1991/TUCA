@@ -2,17 +2,43 @@
 
 <div class="navbar">
   <div class="icon-container">
-  <%= link_to root_path, class:"active" do %>
-  <i class="fas fa-home"></i>
-  <% end %>
-  <%= link_to carts_path do %>
-  <i class="fas fa-shopping-cart"></i>
-  <% end %>
-  <%=  link_to search_path do %>
-  <i class="fas fa-search"></i>
-  <% end %>
-  <%=  link_to dashboard_path do %>
-  <i class="fas fa-user"></i>
-  <% end %>
+      <%= link_to root_path, id: 'root-link' do %>
+      <i class="fas fa-home icon"></i>
+      <% end %>
+      <%= link_to carts_path, id: 'cart-link' do %>
+      <i class="fas fa-shopping-cart icon"></i>
+      <% end %>
+      <%=  link_to search_path, id: 'search-link' do %>
+      <i class="fas fa-search icon"></i>
+      <% end %>
+      <%=  link_to dashboard_path, id: 'dash-link' do %>
+      <i class="fas fa-user icon"></i>
+      <% end %>
+
   </div>
 </div>
+
+
+<script type="text/javascript">
+
+<% if params[:controller]  == 'categories' %>
+
+  document.getElementById('root-link').classList.add('active');
+<% end %>
+
+<% if params[:controller]  == 'carts' %>
+  document.getElementById('cart-link').classList.add('active');
+<% end %>
+
+<% if params[:controller]  == 'recipes' %>
+  document.getElementById('search-link').classList.add('active');
+<% end %>
+
+<% if params[:controller]  == 'pages' %>
+  document.getElementById('dash-link').classList.add('active');
+<% end %>
+
+</script>
+
+
+
