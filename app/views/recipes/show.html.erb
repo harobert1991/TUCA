@@ -40,9 +40,6 @@
 
 
 <div class="row floating-box">
-  <%#= Recipe.first.doses.first.ingredient %>
-  <%#= Recipe.first.doses.first.quantity %>
-  <%#= Recipe.first.doses.first.unit %>
   <% @recipe.doses.each do |dose| %>
   <div class="ingredients-details col-xs-6" id="ingredient-det">
     <i class="fas fa-caret-right"></i>

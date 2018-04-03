@@ -46,32 +46,37 @@ st6 = Step.create!(sequence: 6, photo: "https://res.cloudinary.com/hellofresh/im
 
 puts 'Creating doses...'
 
-Dose.create!(ingredient: "Potato", quantity: 600, unit:"g", step: s1 )
-Dose.create!(ingredient: "Red onion", quantity: 1, unit:"pc", step: s2 )
-Dose.create!(ingredient: "Dried tomatoes", quantity: 60, unit:"g", step: s2 )
-Dose.create!(ingredient: "Beef meatballs", quantity: 6, unit:"pc", step: s3 )
-Dose.create!(ingredient: "Butter", quantity: 2, unit:"t.s.", step: s3 )
-Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"t.s.", step: s3 )
-Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4 )
-Dose.create!(ingredient: "Cheese", quantity: 50, unit:"g", step: s5 )
+default_multi = 2
+
+
+Dose.create!(ingredient: "Potato", quantity: default_multi x 600, unit:"g", step: s1, multiplier: default_multi)
+Dose.create!(ingredient: "Red onion", quantity: 1, unit:"pc", step: s2, multiplier: default_multi )
+Dose.create!(ingredient: "Dried tomatoes", quantity: 60, unit:"g", step: s2, multiplier: default_multi )
+Dose.create!(ingredient: "Beef meatballs", quantity: 6, unit:"pc", step: s3, multiplier: default_multi )
+Dose.create!(ingredient: "Butter", quantity: 2, unit:"t.s.", step: s3, multiplier: )
+Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"t.s.", step: s3, multiplier: default_multi )
+Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4, multiplier: default_multi )
+Dose.create!(ingredient: "Cheese", quantity: 50, unit:"g", step: s5, multiplier: default_multi )
 Dose.create!(ingredient: "Milk", unit:"t.y.o.t", step: s5 )
 Dose.create!(ingredient: "Pepper", unit:"t.y.o.t", step: s5 )
 Dose.create!(ingredient: "Salt", unit:"t.y.o.t", step: s5 )
 
 
-Dose.create!(ingredient: "Oignon", quantity: 1, unit:"pc", step: st1 )
-Dose.create!(ingredient: "Tomates cerises", quantity: 250, unit:"g", step: st1 )
-Dose.create!(ingredient: "Graines de potiron", quantity: 20, unit:"g", step: st2 )
-Dose.create!(ingredient: "Penne complètes", quantity: 180, unit:"g", step: st4 )
-Dose.create!(ingredient: "Gousse d’ail", quantity: 2, unit:"pc", step: st1 )
-Dose.create!(ingredient: "Pois chiches", quantity: 250, unit:"g.", step: st1 )
-Dose.create!(ingredient: "Roquette", quantity: 40, unit:"g", step: st5 )
-Dose.create!(ingredient: "Feta", quantity: 100, unit:"g", step: st6 )
-Dose.create!(ingredient: "Huile d'olive", quantity: 1, unit:"cs", step: st3 )
-Dose.create!(ingredient: "Sucre Brun", quantity: 1, unit:"cs", step: st3 )
-Dose.create!(ingredient: "Vinaigre balsamique", quantity: 1, unit:"cs", step: st3 )
+Dose.create!(ingredient: "Oignon", quantity: 1, unit:"pc", step: st1, multiplier: default_multi )
+Dose.create!(ingredient: "Tomates cerises", quantity: 250, unit:"g", step: st1, multiplier: default_multi )
+Dose.create!(ingredient: "Graines de potiron", quantity: 20, unit:"g", step: st2, multiplier: default_multi )
+Dose.create!(ingredient: "Penne complètes", quantity: 180, unit:"g", step: st4, multiplier: default_multi )
+Dose.create!(ingredient: "Gousse d’ail", quantity: 2, unit:"pc", step: st1, multiplier: default_multi )
+Dose.create!(ingredient: "Pois chiches", quantity: 250, unit:"g.", step: st1, multiplier: default_multi )
+Dose.create!(ingredient: "Roquette", quantity: 40, unit:"g", step: st5, multiplier: default_multi )
+Dose.create!(ingredient: "Feta", quantity: 100, unit:"g", step: st6, multiplier: default_multi )
+Dose.create!(ingredient: "Huile d'olive", quantity: 1, unit:"cs", step: st3, multiplier: default_multi )
+Dose.create!(ingredient: "Sucre Brun", quantity: 1, unit:"cs", step: st3, multiplier: default_multi )
+Dose.create!(ingredient: "Vinaigre balsamique", quantity: 1, unit:"cs", step: st3, multiplier: default_multi )
 Dose.create!(ingredient: "Salt & Pepper", unit:"selon votre goût", step: st5 )
-Dose.create!(ingredient: "Concentré de tomates", quantity: 1, unit:"boîte", step: st5 )
+Dose.create!(ingredient: "Concentré de tomates", quantity: 1, unit:"boîte", step: st5, multiplier: default_multi )
+
+
 
 puts 'Creating tools...'
 
