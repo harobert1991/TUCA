@@ -80,16 +80,14 @@
 
   $('.step-button').click(function(event){
         // e.preventDefault();
-        console.log(event);
-        let a = event.currentTarget.dataset.countdown * 100 ;
-        document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
-        document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
-        console.log(a);
-        setTimeout( function(){
-          $("#myModal").modal("show");
-        }, a);
-      });
+  console.log(event);
+  let a = event.currentTarget.dataset.countdown * 100 ;
+  document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
+  document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.sequence;
+  console.log(a);
+  setTimeout( function(){
+    $("#myModal").modal("show");
+    }, a);
+});
 
-    </script>
-
-
+</script>

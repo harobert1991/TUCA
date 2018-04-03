@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
   belongs_to :user
   belongs_to :recipe
-  has_many :user_ingredients
+  has_many :user_ingredients, dependent: :destroy
   after_create :set_shopping_list
 
   private
