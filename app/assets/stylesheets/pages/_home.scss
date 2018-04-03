@@ -3,7 +3,23 @@
 .text-center {
   h1 {
     margin-bottom: 20px;
-
   }
 }
 
+#random_btn {
+  border-radius: 35px;
+  height: 100px;
+  border-color: #d67118;
+  h1 {
+    color: white;
+    font-size: 26px;
+  }
+}
+
+.header {
+  background: transparent;
+  h1 {
+    font-family: 'Chicle', cursive;
+    text-align: center;
+  }
+}
