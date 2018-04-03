@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   resources :user_ingredients, only: [] do
     get "found", to: "user_ingredients#found"
   end
-  resources :carts, only: [:index, :destroy]
+  resources :carts, only: [:index, :destroy] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
 
 end
 

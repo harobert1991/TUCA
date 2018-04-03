@@ -1,4 +1,4 @@
-
+<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
 <%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
 <i class="fas fa-chevron-left"></i>
 <% end %>
@@ -76,8 +76,7 @@
 </div>
 
 
-<script>
-
+  <script>
   $('.step-button').click(function(event){
         // e.preventDefault();
         console.log(event);
@@ -89,7 +88,8 @@
           $("#myModal").modal("show");
         }, a);
       });
-
     </script>
 
-    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+
+
+</script>

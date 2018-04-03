@@ -1,4 +1,4 @@
-<h1 class="text-center">My Cart</h1>
+<h1 class="text-center">My Shopping List</h1>
 <br>
 
 
@@ -46,10 +46,15 @@
         <div id="found-mini-cook-btn">
          <%= link_to "Lost", user_ingredient_found_path(user_ingredient), remote: :true %>
         </div>
-      </div>
-    </div>
+     </div>
+  </div>
+  <% end %>
+  <% end %>
 
-    <% end %>
-    <% end %>
+
+<div class="text-center">
+  <%= link_to destroy_all_carts_path, method: :delete, class: "btn btn-primary" do  %>
+  <i class="fas fa-trash"></i>
+  Clear my shopping list
   <% end %>
 </div>
