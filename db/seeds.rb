@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
-
+Favorite.destroy_all
 UserIngredient.destroy_all
 Cart.destroy_all
 StepTool.destroy_all
@@ -32,7 +32,7 @@ penne_bolo = Recipe.create!(name: 'Penne, bolognaise aux lentilles', description
 
 puts 'Creating steps...'
 
-sd1 =Step.create!(sequence: 1, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835257/TUCA STEPS/pexels-photo-545013.jpg", description: "Start by washing your hands", step_time: "1", recipe: shrimp )
+sd1 =Step.create!(sequence: 1, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835257/TUCA STEPS/pexels-photo-545013.jpg", description: "Start by washing your hands", step_time: "1", recipe: shrimp, popup_time: "0" )
 sd2 =Step.create!(sequence: 2, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522836179/TUCA STEPS/pexels-photo-679454.jpg", description: "Take the shrimp out and let them defrost.", step_time: "2", recipe: shrimp)
 sd3 =Step.create!(sequence: 3, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835259/TUCA STEPS/Tuca-1.jpg", description: "Gather all the ingredients", step_time: "2", recipe: shrimp)
 sd4 =Step.create!(sequence: 4, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522836471/TUCA STEPS/P1020906.jpg", description: "Peel the onion", step_time: "3", recipe: shrimp)
