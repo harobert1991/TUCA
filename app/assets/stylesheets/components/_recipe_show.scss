@@ -32,18 +32,27 @@
 
 
 .recipe-icons {
+  // display:flex;
+  // justify-content: space-around;
   display:flex;
   justify-content: space-around;
   color: gray;
   opacity: 0.8;
-  font-size: 25px;
+  font-size: 30px;
   padding: 10px 20px;
   margin-top: 10px;
+  :first-child{
+    margin-left: 10px;
+    p{
+      font-size:12px;
+      margin: 0px;
+    }
+  }
 }
 
 #ingredient-det {
   font-size: 16px;
-  margin-left: 0px;
+  margin-left: 10px;
   font-weight: lighter;
   padding-right: 0px;
 }
@@ -83,7 +92,12 @@
   justify-content: space-between;
   margin-left: 15px;
   margin-right: 15px;
+  margin-bottom: 10px;
   img {
-    height: 30px;
+    height: 40px;
   }
+}
+
+.recipe-show-title {
+  margin-left: 5px;
 }
