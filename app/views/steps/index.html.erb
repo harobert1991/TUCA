@@ -1,17 +1,15 @@
-<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
-<%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
-<i class="fas fa-chevron-left"></i>
-<% end %>
-<br>
-<br>
-<br>
+
 <div class="step-container" id="step">
-  <h1 class="text-center"><%= @recipe.name %></h1>
+  <!-- <h1 class="text-center"><%= @recipe.name %></h1>
   <div class="recipe-time">
     <i class="far fa-clock"></i>
     <% sum_time = @recipe.prep_time + @recipe.cooking_time %>
     <%= sum_time %> min
-  </div>
+  </div> -->
+  <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+<%= link_to recipe_path(@steps.first.recipe), class:"arrow-black"  do %>
+<i class="fas fa-chevron-left"></i>
+<% end %>
 
   <% @steps.each do |step| %>
 
