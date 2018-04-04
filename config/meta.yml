@@ -1,0 +1,6 @@
+
+meta_product_name: "TUCA"
+meta_title: "TUCA - Your ultimate cooking assistant"
+meta_description: "Ever came home without any idea what too cook or how to cook these delicious pasta you're Mom used to make? "
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
