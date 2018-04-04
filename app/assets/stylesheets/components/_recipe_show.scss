@@ -43,7 +43,7 @@
 
 #ingredient-det {
   font-size: 16px;
-  margin-left: 0px;
+  margin-left: 15px;
   font-weight: lighter;
   padding-right: 0px;
 }
@@ -86,4 +86,9 @@
   img {
     height: 30px;
   }
+}
+
+.ingredient-container {
+ margin-left: 0px !important;
+ margin-right: 0px !important;
 }
