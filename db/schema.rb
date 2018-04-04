@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20180404100917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.text "popup"
     t.index ["category_id"], name: "index_recipes_on_category_id"
   end
 
