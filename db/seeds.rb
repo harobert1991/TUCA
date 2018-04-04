@@ -19,23 +19,36 @@ Step.destroy_all
 
 puts 'Creating categories...'
 
-traditional = Category.create!(name: 'Traditional', photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_360/v1/hellofresh_s3/image/ovenkrieltjes-met-kip-en-groene-pesto-cb0ea6e6.jpg")
+traditional = Category.create!(name: 'World', photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_360/v1/hellofresh_s3/image/ovenkrieltjes-met-kip-en-groene-pesto-cb0ea6e6.jpg")
 vegetarian = Category.create!(name: 'Vegetarian', photo: "http://res.cloudinary.com/dqsodpjur/image/upload/v1522144043/r1egdekahnrrrhs7nezh.jpg")
 
 puts 'Creating recipes...'
 
 
-meatballs = Recipe.create!(name: 'Meatballs with chicory puree', description: "Fresh meatballs made with love", prep_time: 12, cooking_time: 35, category: traditional, photo:"https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_80,w_auto:100:1280/v1/hellofresh_s3/image/andijviestamppot-met-gehaktballetjes-1374b75b.jpg" )
+shrimp = Recipe.create!(name: 'Curry shrimp linguine ', description: "Topped with zuchinis and peppers", prep_time: 30, cooking_time: 10, category: traditional, photo:"https://res.cloudinary.com/dqsodpjur/image/upload/v1522835266/TUCA STEPS/Tuca-18.jpg" )
 penne_bolo = Recipe.create!(name: 'Penne, bolognaise aux lentilles', description: "Avec de la roquette et graines de courges", prep_time: 15, cooking_time: 10, category: vegetarian, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_80,w_auto:100:1280/v1/hellofresh_s3/image/598c1e4aa2882a7f736776c5-fb27751c.jpg")
 
 puts 'Creating steps...'
 
-s1 =Step.create!(sequence: 1, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-40a3602a.jpg", description: "Portez une grande quantité d'eau à ébullition dans la casserole. Lavez ou épluchez les pommes de terre, découpez-les en gros morceaux et faites-les cuire 15 minutes à couvert. Egouttez en conservant un peu d'eau de cuisson et réservez sans couvercle.", step_time: "1", recipe: meatballs, popup_title: "The pasta are ready", popup_time:"15", popup_description: "It is time to take out the pasta and put them into the strainer")
-s2 =Step.create!(sequence: 2, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-11836ea6.jpg", description: "Pendant ce temps, taillez l'oignon rouge en demi-rondeleles et détaillez les tomates séchées.", step_time: "2", recipe: meatballs)
-s3 =Step.create!(sequence: 3, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-c8394689.jpg", description: "Faites chauffer la moitié du beurre dans la poêle et faites-y dorer les boulettes sur tous les côtés 3 à 4 minutes à feu moyen-vif. Ajoutez l'oignon rouge et le vinaigre balsamique noir, puis remuez 1 minute. Baissez le feu, couvrez la poêle et poursuivez la cuisson 10 minutes ou jusqu'à ce que les boulettes soient cuites.", step_time: "10", recipe: meatballs, popup_title: "The boulette are ready", popup_time:"10", popup_description: "It is time to take out the boulette")
-s4 =Step.create!(sequence: 4, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-820f243b.jpg", description: "Pendant ce temps, faites chauffer le reste du beurre dans le wok ou la sauteuse et faites-y cuire la majeure partie de la chicorée 5 minutes à feu moyen.", step_time: "5", recipe: meatballs)
-s5 =Step.create!(sequence: 5, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-7f5b8b11.jpg", description: "Ecrasez les pommes de terre au presse-purée pour en faire une purée épaisse. Pour plus d'onctuosité, ajoutez éventuellement un filet de lait ou d'eau de cuisson. Incorporez la chicorée cuite et crue à la purée, puis ajoutez le fromage et les tomates séchées. Salez et poivrez.", step_time: "5", recipe: meatballs)
-s6 =Step.create!(sequence: 6, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/5a6096f92c3e083d805b33c2/step-ce6db6a3.jpg", description: "Servez la purée de chicorée sur les assiettes et garnissez avec l'oignon rouge. Accompagnez des boulettes et arrosez-les du jus de viande de la poêle.", step_time: "5", recipe: meatballs)
+s1 =Step.create!(sequence: 1, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835257/TUCA STEPS/pexels-photo-545013.jpg", description: "Start by washing your hands", step_time: "1", recipe: shrimp )
+s2 =Step.create!(sequence: 2, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522836179/TUCA STEPS/pexels-photo-679454.jpg", description: "Take the shrimp out and let them defrost.", step_time: "2", recipe: shrimp)
+s3 =Step.create!(sequence: 3, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835259/TUCA STEPS/Tuca-1.jpg", description: "Gather all the ingredients", step_time: "2", recipe: shrimp)
+s4 =Step.create!(sequence: 4, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522836471/TUCA STEPS/P1020906.jpg", description: "Peel the onion", step_time: "3", recipe: shrimp)
+s5 =Step.create!(sequence: 5, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835258/TUCA STEPS/Tuca-4.jpg", description: "Cut the onion into slices, then again into dices.", step_time: "5", recipe: shrimp)
+s6 =Step.create!(sequence: 6, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835259/TUCA STEPS/Tuca-6.jpg", description: "Grab  pan, add a table spoon of olive oil to it. Turn it to medium heat.", step_time: "2", recipe: shrimp)
+s7 =Step.create!(sequence: 7, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835261/TUCA STEPS/Tuca-7.jpg", description: "Add the onions dices to the pan (Keep an eye on them so they don't burn.)", step_time: "2", recipe: shrimp)
+s8 =Step.create!(sequence: 8, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835262/TUCA STEPS/Tuca-8.jpg", description: "Cut the pepper into halves, then remove the inside as shown above. Continue by cutting them into slices then in dices. Set them aside in a bowl/container.", step_time: "5", recipe: shrimp)
+s9 =Step.create!(sequence: 9, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835263/TUCA STEPS/Tuca-13.jpg", description: "Peel the zuchinis. Start by cutting both, then slice them with a peeler as shown above.", step_time: "5", recipe: shrimp)
+s10 =Step.create!(sequence: 10, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835261/TUCA STEPS/Tuca-10.jpg", description: "Take the onions off the heat and set them aside", step_time: "2", recipe: shrimp)
+s11 =Step.create!(sequence: 11, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835259/TUCA STEPS/Tuca-3.jpg", description: "Add a large volume of water in a pot, put it on the stove on high and cover it.", step_time: "3", recipe: shrimp)
+s12 =Step.create!(sequence: 12, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835259/TUCA STEPS/Tuca-6.jpg", description: "Grab the pan, add a table spoon of olive oil to it. Turn it to medium heat.", step_time: "3", recipe: shrimp)
+s13 =Step.create!(sequence: 13, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522838029/TUCA STEPS/P1020944.jpg", description: "Add the peppers to the pan and let it cook on medium heat", step_time: "4", recipe: shrimp)
+s14 =Step.create!(sequence: 14, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835264/TUCA STEPS/Tuca-14.jpg", description: "Peel and cut the garlic clove into small pieces", step_time: "4", recipe: shrimp)
+s15 =Step.create!(sequence: 15, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522835261/TUCA STEPS/Tuca-10.jpg", description: "Once the peppers are cooked, add them to the bowl with the onions.", step_time: "1", recipe: shrimp)
+s16 =Step.create!(sequence: 16, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522838868/TUCA STEPS/P1020991.jpg", description: "Add salt the the boiling water", step_time: "1", recipe: shrimp)
+s17 =Step.create!(sequence: 17, photo: "https://res.cloudinary.com/dqsodpjur/image/upload/v1522838978/TUCA STEPS/P1020994.jpg", description: "Put the pasta in the boiling water and put the lid back on", step_time: "1", recipe: shrimp)
+
+
 st1 = Step.create!(sequence: 1, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/598c1e4aa2882a7f736776c5/step-b26deeba.jpg", description:"Pour les pennes, portez 2L d'eau à ébullition dans une casserole. Emincez l'oignon et écrasez l'ail. Coupez les tomates cerises en deux. Égouttez les lentilles dans une passoire.", step_time: "10", recipe: penne_bolo)
 st2 = Step.create!(sequence: 2, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/598c1e4aa2882a7f736776c5/step-bd29d357.jpg", description:"Faites chauffer le wok ou la sauteuse à feu vif et grillez-y les graines de courge à sec jusqu’à ce qu’elles commencent à sauter. Ensuite, réservez.", step_time: "10", recipe: penne_bolo)
 st3 = Step.create!(sequence: 3, photo: "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,h_400,q_80/v1/hellofresh_s3/598c1e4aa2882a7f736776c5/step-fb60188e.jpg", description:"Faites chauffer l’huile d’olive dans le même wok et faites-y revenir l’oignon et l’ail 2 minutes à feu doux. Ajoutez l’origan et le concentré de tomates, puis poursuivez la cuisson 5 minutes. Versez ensuite 100 ml d’eau par personne, émincez ¼ de cube de bouillon par personne au-dessus du wok, puis ajoutez la cassonade et la moitié du vinaigre balsamique noir. Couvrez et laissez mijoter 10 minutes. Ajoutez les tomates cerises à mi-cuisson.", step_time: "5", recipe: penne_bolo)
@@ -46,17 +59,13 @@ st6 = Step.create!(sequence: 6, photo: "https://res.cloudinary.com/hellofresh/im
 
 puts 'Creating doses...'
 
-Dose.create!(ingredient: "Potato", quantity: 600, unit:"g", step: s1 )
-Dose.create!(ingredient: "Red onion", quantity: 1, unit:"pc", step: s2 )
-Dose.create!(ingredient: "Dried tomatoes", quantity: 60, unit:"g", step: s2 )
-Dose.create!(ingredient: "Beef meatballs", quantity: 6, unit:"pc", step: s3 )
-Dose.create!(ingredient: "Butter", quantity: 2, unit:"t.s.", step: s3 )
-Dose.create!(ingredient: "Balsamic vinegar", quantity: 2, unit:"t.s.", step: s3 )
-Dose.create!(ingredient: "Chicory", quantity: 300, unit:"g", step: s4 )
-Dose.create!(ingredient: "Cheese", quantity: 50, unit:"g", step: s5 )
-Dose.create!(ingredient: "Milk", unit:"t.y.o.t", step: s5 )
-Dose.create!(ingredient: "Pepper", unit:"t.y.o.t", step: s5 )
-Dose.create!(ingredient: "Salt", unit:"t.y.o.t", step: s5 )
+Dose.create!(ingredient: "Pasta linguine", quantity: 500, unit:"g", step: s16 )
+Dose.create!(ingredient: "Onion", quantity: 1, unit:"pc", step: s4 )
+Dose.create!(ingredient: "Shrimps", quantity: 500, unit:"g", step: s2 )
+Dose.create!(ingredient: "Olive oil", quantity: 1, unit:"tbsp", step: s3 )
+Dose.create!(ingredient: "Red pepper", quantity: 1, unit:"pc", step: s8 )
+Dose.create!(ingredient: "Zuchini", quantity: 1, unit:"pc", step: s9 )
+
 
 
 Dose.create!(ingredient: "Oignon", quantity: 1, unit:"pc", step: st1 )
