@@ -1,13 +1,13 @@
-<div class="home_container">
-  <div class="row">
-  <div class="row header">
+<div class="home-container">
+
+  <div class="row header carousel-caption" id="home-header">
     <h1> TUCA </h1>
   </div>
-    <div class="col-md-12">
+
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <div class=" imageee hidden-xs hidden-sm">
+          <div class="imageee hidden-xs hidden-sm">
             <%= image_tag ("cooking2.jpg") %>
             <div class="carousel-caption">
               <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
@@ -27,8 +27,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
+
 </div>
 
 
