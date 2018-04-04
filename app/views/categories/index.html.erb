@@ -4,29 +4,29 @@
     <h1> TUCA </h1>
   </div>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="imageee hidden-xs hidden-sm">
-            <%= image_tag ("cooking2.jpg") %>
-            <div class="carousel-caption">
-              <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
-               <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
-               <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="hidden-md hidden-lg">
-          <%= image_tag ("food-salad-healthy-lunch.jpg") %>
-            <div class="carousel-caption">
-              <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
-              <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
-              <% end %>
-              </div>
-            </div>
-          </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div class="imageee hidden-xs hidden-sm">
+        <%= image_tag ("cooking2.jpg") %>
+        <div class="carousel-caption">
+          <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
+           <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
+           <% end %>
+         </div>
+       </div>
+     </div>
+     <div class="hidden-md hidden-lg">
+      <%= image_tag ("food-salad-healthy-lunch.jpg") %>
+      <div class="carousel-caption">
+        <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
+          <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
+          <% end %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
 
 </div>
@@ -49,6 +49,23 @@
 <% end %>
 <% end %>
 
+<script>
+  $(document).ready(function() {
+    $(".navbar").hide();
+    var lastScrollTop = 0;
+    $(window).scroll(function() {
+      if($(window).scrollTop() > ($(document).find('h1:contains("Choose a Category")')[0].scrollHeight)) {
+        $('.navbar').show();
+      }
+   var st = $(this).scrollTop();
+   if (st < lastScrollTop) {
+    $(".navbar").hide();
+   };
+   lastScrollTop = st;
+    });
+
+})
+</script>
 
 
 
