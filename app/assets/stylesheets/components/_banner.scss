@@ -16,4 +16,17 @@
 
 }
 
-
+.search-banner {
+  background-color: #008361;
+  height: 10vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  .form-control {
+    border-radius: 20px;
+    width: 280px;
+  }
+  h1 {
+    color:white;
+  }
+}
