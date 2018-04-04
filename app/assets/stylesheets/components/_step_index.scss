@@ -16,16 +16,7 @@
 .step-description {
   p {
   margin: 0 0 3px !important;
-  font-size: 25px;
-
-}
-}
-
-.step-time {
-  font-size: 15px;
-  font-weight: normal;
-    img {
-  height: 30px;
+  font-size: 20px;
   }
 }
 
@@ -41,8 +32,9 @@
 }
 
 #ingredient-details {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: lighter;
+  padding-left: 35px;
 }
 
 p {
@@ -70,9 +62,12 @@ p {
 
 .step-time{
   flex: 0 0 14%;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 15px 20px;
+  // padding-left: 10px;
+  // padding-top: 10px;
   position: relative;
+  font-size: 22px;
+  font-weight: normal;
   #time {
     position: absolute;
     left: 20px;
@@ -80,6 +75,9 @@ p {
   #tools {
     position:absolute;
     right: 20px;
+  }
+  img {
+  height: 31px;
   }
 }
 
