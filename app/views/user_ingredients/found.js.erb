@@ -1,14 +1,23 @@
 
 
 function found(){
-let doc = document.getElementById('bought-ui-'+ <%= @uI.id%>);
+let doc = document.getElementById('bought-ui-'+<%= @uI.id%>);
 doc.remove();
 
 
-  let addthis =     `<li id="bought-ui-<%= @uI.id%>">
-          <%= check_box_tag(@uI.dose.ingredient) %>
-          <%= @uI.dose.ingredient %>
-          </li>`;
-          document.getElementById('found-ingredients').insertAdjacentHTML('beforeend', addthis);
+  let addthis = `<div class="row" id="bought-ui-<%= @uI.id%>">
+  <div class="col-xs-5 col-xs-offset-1" id="found-dose-ingredient">
+  <%= @uI.dose.ingredient %>
+   </div>
+    <div class="col-xs-2" id="dose-quantity">
+      <%= @uI.dose.quantity %><%= @uI.dose.unit %>
+    </div>
+    <div class="col-xs-4" >
+        <div id="found-mini-cook-btn">
+         <%= link_to "Lost", user_ingredient_found_path(@uI), remote: :true %>
+        </div>
+     </div>
+  </div>`;
+          document.getElementById('found-cart-list').insertAdjacentHTML('beforeend', addthis);
 }
 found();
