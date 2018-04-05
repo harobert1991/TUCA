@@ -34,6 +34,9 @@
     </div>
     <div class="complete-step-without-picture"> <%#complete-step-without-picture classforpadding  %>
       <div class="step-time">
+        <div id="sequence">
+          <%= step.sequence %> / <%= @steps.size%>
+        </div>
         <div id="time">
         <i class="far fa-clock"></i>
         <%= step.step_time %> min
@@ -78,7 +81,7 @@
   $('.step-button').click(function(event){
         // e.preventDefault();
         console.log(event);
-        let a = event.currentTarget.dataset.countdown * 300 ;
+        let a = event.currentTarget.dataset.countdown * 1000 ;
         if (a > 0) {
         document.getElementById("exampleModalLabelb").innerText = event.currentTarget.dataset.description;
         document.getElementById("exampleModalLabel").innerText = event.currentTarget.dataset.title;
@@ -87,8 +90,10 @@
           $("#myModal").modal("show");
         }, a);
       }});
-    </script>
+  </script>
 
-
-
+<script type="text/javascript">
+  $('.btn.btn-primary').hover( function(){ $(this).css('background-color', '#008361')});
 </script>
+
+
