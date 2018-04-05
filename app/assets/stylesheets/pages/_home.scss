@@ -4,6 +4,9 @@
   h1 {
     margin-bottom: 20px;
   }
+  a {
+    font-size: 18px;
+  }
 }
 
 #random_btn {
@@ -31,4 +34,13 @@
 
 .home-container {
   height: 100vh;
+}
+
+.home-container-flex {
+
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
