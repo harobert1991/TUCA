@@ -36,6 +36,7 @@
 }
 
 
+
 .recipe-icons {
   // display:flex;
   // justify-content: space-around;
@@ -46,6 +47,7 @@
   font-size: 30px;
   padding: 10px 20px;
   margin-top: 10px;
+
   :first-child{
     margin-left: 10px;
     p{
@@ -58,6 +60,10 @@
 
     }
   }
+}
+
+#clock {
+  margin-top: 15px;
 }
 
 #ingredient-det {
@@ -103,6 +109,8 @@
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 10px;
+  border-top: 1px solid gray;
+  padding-top: 20px;
   img {
     height: 40px;
   }
