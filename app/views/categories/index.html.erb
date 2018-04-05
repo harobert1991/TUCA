@@ -13,42 +13,37 @@
           <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
            <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
            <% end %>
-         </div>
-       </div>
-     </div>
-     <div class="hidden-md hidden-lg">
-      <%= image_tag ("food-salad-healthy-lunch.jpg") %>
-      <div class="carousel-caption">
-        <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
-          <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
-          <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-md hidden-lg">
+        <%= image_tag ("food-salad-healthy-lunch.jpg") %>
+        <div class="carousel-caption">
+          <div> <%=  link_to recipe_path(@recipe_of_the_day) do %>
+            <span class="btn" id="random_btn"><h1> Pick a recipe <br> <i class="fas fa-random"></i></h1> </span>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="home-container-flex">
+  <span class="text-center"> <h1>Choose a Category</h1> </span>
 
-</div>
-
-
-
-
-<span class="text-center"> <h1>Choose a Category</h1> </span>
-
-
-<% @categories.each do |category| %>
-<%= link_to recipes_path(category: category.name) do  %>
-<div class="row">
-  <div class="col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">
-    <div class="card-basic card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path category.photo %>')">
-      <%= category.name  %>
+  <% @categories.each do |category| %>
+  <%= link_to recipes_path(category: category.name) do  %>
+  <div class="row">
+    <div class="col-xs-10 col-md-8 col-xs-offset-1 col-md-offset-2">
+      <div class="card-basic card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path category.photo %>')">
+        <%= category.name  %>
+      </div>
     </div>
   </div>
+  <% end %>
+  <% end %>
 </div>
-<% end %>
-<% end %>
-
 <script>
   $(document).ready(function() {
     $(".navbar").hide();
@@ -57,14 +52,13 @@
       if($(window).scrollTop() > ($(document).find('h1:contains("Choose a Category")')[0].scrollHeight)) {
         $('.navbar').show();
       }
-   var st = $(this).scrollTop();
-   if (st < lastScrollTop) {
-    $(".navbar").hide();
-   };
-   lastScrollTop = st;
+      var st = $(this).scrollTop();
+      if (st < lastScrollTop) {
+        $(".navbar").hide();
+      };
+      lastScrollTop = st;
     });
-
-})
+  })
 </script>
 
 
