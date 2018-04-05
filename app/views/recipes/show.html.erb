@@ -62,3 +62,20 @@
   </div>
 </div>
 
+<script>
+  $(document).ready(function() {
+    $(".navbar").hide();
+    var lastScrollTop = 0;
+    $(window).scroll(function() {
+      if($(window).scrollTop() > ($(document).find('h3:contains("Ingredients")')[0].scrollHeight)) {
+        $('.navbar').show();
+      }
+   var st = $(this).scrollTop();
+   if (st < lastScrollTop) {
+    $(".navbar").hide();
+   };
+   lastScrollTop = st;
+    });
+})
+</script>
+
