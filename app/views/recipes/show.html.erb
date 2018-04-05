@@ -10,8 +10,8 @@
 
 <div id="recipe-content">
 <div class="row">
-  <div class="col-xs-4 recipe-icons">
-    <i class="far fa-clock"> <p> <%= @recipe.cooking_time + @recipe.prep_time %> min</p></i>
+  <div class="col-xs-4 recipe-icons" id="clock">
+    <i class="far fa-clock"> <p id> <%= @recipe.cooking_time + @recipe.prep_time %> min</p></i>
 
   </div>
   <div class="col-xs-4 recipe-icons">
@@ -26,7 +26,7 @@
   </div>
 </div>
 
- <div class="recipe-show-title"><h3>    Utensils:</h3> </div>
+ <div class="recipe-show-title"> </div>
 <div class="tools">
   <%#= Recipe.first.steps.first.step_tools.first.tool.name %>
   <% unique_array = [] %>
@@ -40,8 +40,8 @@
   <% end %>
 </div>
 
-<div class="recipe-show-title"><h3>    Ingredients:</h3></div>
-<div class="row">
+<div id="border-ingredients"></div>
+<div class="row" id="doses">
   <%#= Recipe.first.doses.first.ingredient %>
   <%#= Recipe.first.doses.first.quantity %>
   <%#= Recipe.first.doses.first.unit %>
