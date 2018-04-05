@@ -35,7 +35,9 @@
   color: white
 }
 
-
+#doses {
+  padding: 15px;
+}
 
 .recipe-icons {
   // display:flex;
@@ -67,10 +69,14 @@
 }
 
 #ingredient-det {
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 10px;
-  font-weight: lighter;
   padding-right: 0px;
+}
+
+#border-ingredients {
+  border-top: 1px solid gray;
+  margin: 15px;
 }
 
 
@@ -79,6 +85,7 @@
   align-items: flex-end;
   justify-content: center;
   margin-top: 10px;
+  padding-top: 15px;
   h4 {
     font-weight: 100;
     font-family: "Lato", "sans serif";
