@@ -65,16 +65,17 @@ p {
   padding: 15px 20px;
   // padding-left: 10px;
   // padding-top: 10px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   font-size: 22px;
   font-weight: normal;
   #time {
-    position: absolute;
-    left: 20px;
+    // position: absolute;
+    // left: 20px;
   }
   #tools {
-    position:absolute;
-    right: 20px;
+    // position:absolute;
+    // right: 20px;
   }
   img {
   height: 31px;
@@ -88,17 +89,25 @@ p {
 }
 
 .step-button{
-    flex: 0 0 20%;
+    flex: 0 0 30%;
     padding-top: 5px;
+    height: 10vh;
+    .btn.btn-primary:hover{
+      background-color: #008361;
+    }
 }
 
 .btn.btn-primary {
   font-size: 24px;
 }
   .step-description{
-    flex: 0 0 50%;
+    flex: 0 0 30%;
     padding: 2px 6px;
-    font-size: 17px;
+    p {
+       font-size: 28px;
+       color: $darkGrey;
+       padding: 10px;
+    }
   }
 
 
