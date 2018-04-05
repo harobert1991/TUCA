@@ -49,8 +49,7 @@
       </div>
       <div class="row step-details">
           <% step.doses.each do |dose| %>
-          <div class="col-xs-6 col-6" id="ingredient-details">
-            <i class="fas fa-caret-right"></i>
+          <div class="col-xs-8 col-xs-offset-2 text-center" id="ingredient-details">
             <%= dose.ingredient %> -
             <%= dose.quantity %>
             <%= dose.unit %>
